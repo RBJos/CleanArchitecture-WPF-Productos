@@ -43,7 +43,7 @@ public partial class MainWindow : Window
             {
                 var servicioEditar = App.Services.GetRequiredService<EditarProducto>();
 
-                await servicioEditar.EjecutarAsync((Guid)BtnGuardar.Tag,txtNombre.Text,decimal.Parse(txtPrecio.Text));
+                await servicioEditar.EjecutarAsync((Guid)BtnGuardar.Tag,txtNombre.Text,precio);
             }
 
 

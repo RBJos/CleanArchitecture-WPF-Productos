@@ -26,6 +26,15 @@
 
         public void ActualizarDatos(string nombre, decimal precio)
         {
+            if (string.IsNullOrWhiteSpace(nombre))
+            {
+                throw new ArgumentException("El nombre del producto no puede estar vacío.", nameof(nombre));
+            }
+            if (precio <= 0)
+            {
+                throw new ArgumentException("El precio del producto no puede ser negativo o cero.", nameof(precio));
+            }
+
             Nombre = nombre;
             Precio = precio;
         }

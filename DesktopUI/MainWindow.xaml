@@ -1,0 +1,39 @@
+﻿<Window x:Class="DesktopUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesktopUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel Margin="20">
+        <TextBlock Text="Mi primer ERP - Productos"/>
+        <TextBox x:Name="txtNombre" />
+        <TextBox x:Name="txtPrecio" />
+        <Button x:Name="BtnGuardar"  Content="Guardar" Click="BtnGuardar_ClickAsync" Margin="0,10,0,0"/>
+        <Button x:Name="BtnCancelar" Content="Cancelar" Click="BtnCancelar_ClickAsync" Visibility="Collapsed" Margin="5" Background="Gray"/>
+        <!--Button Content="Ver productos" Click="BtnListar_Click" Margin="0,10,0,0"/-->
+        <TextBox x:Name="txtBuscar" Margin="0,10,0,10" TextChanged="txtBuscar_TextChanged"/>
+        
+        <DataGrid x:Name="dgProductos" AutoGenerateColumns="False" Margin="0,10,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="50"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
+                <DataGridTextColumn Header="Precio" Binding="{Binding Precio}" Width="*"/>
+
+                <DataGridTemplateColumn Header="Acciones" Width="150">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="Editar" Click="BtnEditar_ClickAsync" Margin="0,0,5,0"/>
+                                <Button Content="Eliminar" Click="BtnEliminar_ClickAsynck"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+
+    
+</Window>

@@ -3,7 +3,7 @@ markdown# Productos App - Clean Architecture + WPF + EF Core
 App de escritorio con CRUD completo de productos, implementada bajo Clean Architecture.
 
 ## 🚀 Stack
-- C# / .NET 8
+- C# / .NET 9
 - WPF
 - Entity Framework Core
 - Clean Architecture (Dominio, Aplicación, Infraestructura, Presentación)
